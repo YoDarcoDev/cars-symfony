@@ -7,4 +7,9 @@
         <h1 class="text-center mt-3">Vente de véhicules</h1>
     </div>
 
+    {% for car in cars %}
+        {{ car.modele }}
+        {{ car.marque }}
+    {% endfor %}
+
 {% endblock %}

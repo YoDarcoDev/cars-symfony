@@ -72,6 +72,16 @@ class Car
      */
     private $lieu;
 
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $price;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Categorie::class, inversedBy="cars")
+     */
+    private $categorie;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -205,6 +215,30 @@ class Car
     public function setLieu(string $lieu): self
     {
         $this->lieu = $lieu;
+
+        return $this;
+    }
+
+    public function getPrice(): ?int
+    {
+        return $this->price;
+    }
+
+    public function setPrice(int $price): self
+    {
+        $this->price = $price;
+
+        return $this;
+    }
+
+    public function getCategorie(): ?Categorie
+    {
+        return $this->categorie;
+    }
+
+    public function setCategorie(?Categorie $categorie): self
+    {
+        $this->categorie = $categorie;
 
         return $this;
     }

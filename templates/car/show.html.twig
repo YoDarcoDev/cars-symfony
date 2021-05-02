@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ car.marque }} - {{ car.modele }}{% endblock %}
+
+{% block body %}
+
+    {# BREADCRUMB / FIL D'ARIANE #}
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{{ path('home') }}">Accueil</a></li>
+        <li class="breadcrumb-item"><a href="{{ path('home') }}">Catégorie</a></li>
+        <li class="breadcrumb-item active">{{ car.modele }}</li>
+    </ol>
+
+    <div class="container mt-5">
+
+        <h2>{{ car.marque }} - {{ car.modele }}</h2>
+        <h3>Prix : {{ car.price }}€</h3>
+
+        <div class="row">
+            <div class="col-4">
+                <img src="{{ car.image }}" class="img-fluid mt-4" alt="Image {{ car.modele }}">
+            </div>
+
+            <div class="col">
+                <span class="badge badge-primary my-4">{{ car.categorie.type }}</span>
+                <span class="badge badge-info my-4">Année : {{ car.annee }}</span>
+                <span class="badge badge-warning my-4">{{ car.km }} km</span>
+                <p class="mt-3">{{ car.description }}</p>
+                <a href="" class="btn btn-success btn-lg mt-5"><i class="fas fa-shopping-card">Ajouter au panier</i></a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

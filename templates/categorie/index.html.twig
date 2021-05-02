@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nos Catégories{% endblock %}
+
+{% block body %}
+
+    <div class="container">
+        <h2>Nos catégories</h2>
+        <p>Trouvez votre véhicule en fonction de sa catégorie</p>
+
+        {% for categorie in categories %}
+            <h3>{{ categorie.type }}</h3>
+        {% endfor %}
+    </div>
+
+{% endblock %}

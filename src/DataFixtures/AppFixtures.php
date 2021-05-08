@@ -28,6 +28,9 @@ class AppFixtures extends Fixture
         // Ajout librairie FakePrices
         $faker->addProvider(new \Liior\Faker\Prices($faker));
 
+        // Ajout librairie Bluemmb Picsum
+        $faker->addProvider(new \Bluemmb\Faker\PicsumPhotosProvider($faker));
+
         // Ajout librairie Collection
         // $faker->addProvider(new \Bezhanov\Faker\Provider\Avatar($faker));
 
@@ -62,7 +65,7 @@ class AppFixtures extends Fixture
                     ->setPortes($faker->vehicleDoorCount())
                     ->setPuissance(mt_rand(50, 600))
                     ->setDescription($faker->sentence())
-                    ->setImage($faker->imageUrl())
+                    ->setImage($faker->imageUrl(400, 400, true))
                     ->setLieu($faker->city())
                     ->setPrice($faker->price(10000, 100000))
                     ->setCategorie($categorie); // Relier voiture à une catégorie

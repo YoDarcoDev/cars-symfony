@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Repository\CarRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -10,8 +11,8 @@ use Symfony\Component\Routing\Annotation\Route;
 class CarController extends AbstractController
 {
     /**
-     * Récupère une véhicule en fonction des on id
-     * @Route("/car/{id}", name="car_show")
+     * Récupère un véhicule en fonction de son id
+     * @Route("/cars/{id}", name="car_show")
      */
     public function show($id, CarRepository $carRepository): Response
     {
@@ -25,10 +26,10 @@ class CarController extends AbstractController
 
 
     /**
-     * Récupère tous les véhicules
+     * Permet d'afficher tous les véhicules
      * @Route("/cars", name="cars_showAll")
      */
-    public function showAll(CarRepository $carRepository)
+    public function index(CarRepository $carRepository): Response
     {
         $cars = $carRepository->findAll();
 
@@ -36,4 +37,19 @@ class CarController extends AbstractController
             'cars' => $cars
         ]);
     }
+
+
+    /**
+     * Route qui permet de supprimer un véhicule
+     * @Route("/cars/{carId}/delete", name="cars_delete")
+     * @param int $carId
+     * @param CarRepository $carRepository
+     */
+    public function deleteCar(int $carId, CarRepository $carRepository, EntityManagerInterface $em)
+    {
+        $car = $carRepository->find("$carId");
+
+        return $this->redirectToRoute('cars_showAll');
+    }
+
 }

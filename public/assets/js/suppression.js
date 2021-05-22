@@ -1,28 +1,17 @@
 // SELECTION: Bouton supprimer (Croix)
-const btnCroix = document.getElementById('croix');
-console.log(btnCroix);
-
-// SELECTION: Bouton valider (Modal)
-const btnModalOk = document.querySelector('#btnModalOk');
-console.log(btnModalOk);
+const btnsCroix = document.querySelectorAll('#croix');
+console.log(btnsCroix);
 
 
-// FUNCTION: Remplir Modal (userId)
-const remplirModal = (userId) => {
-    btnCroix.dataset.userId = userId;
+// FUNCTION: Remplir et afficher Modal avec carId
+const remplirModal = (carId) => {
+    const btnModalOk = document.querySelector('#btnModalOk');
+    btnModalOk.dataset.carId = carId;
 }
 
-// EVENEMENT: Click sur la croix
-btnCroix.addEventListener('click', (el) => {
-   console.log(remplirModal(el.dataset.userId));
-})
 
-// EVENEMENT: Click valider suppression
-btnModalOk.addEventListener('click', validerSuppression);
-
-
-// FUNCTION: Valider la suppression
-async function validerSuppression() {
-
-}
+// EVENEMENT: Remplir la modal
+btnsCroix.forEach(element => element.addEventListener('click', () => {
+    remplirModal(element.dataset.carId)
+}))
 

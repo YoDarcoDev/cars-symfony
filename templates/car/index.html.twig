@@ -3,6 +3,7 @@
 {% block title %}Accueil{% endblock %}
 
 {% block body %}
+
     <div class="container">
         <h1 class="text-center mt-3">Tous nos modèles disponibles</h1>
 
@@ -15,7 +16,7 @@
                     <div id="card" class="card my-4" style="width: 14rem;">
                         <div class="image">
                             <img src="{{ car.image }}" class="card-img-top" alt="carte">
-                            <a id="croix" data-user-id="{{ car.id }}" data-toggle="modal" data-target="#modalSuppression" href="{{ path('cars_delete', {'carId' : car.id}) }}">
+                            <a id="croix" data-car-id="{{ car.id }}" data-toggle="modal" data-target="#modalSuppression" href="{{ path('cars_delete', {'carId' : car.id}) }}">
                                 <i class="far fa-times-circle"></i>
                             </a>
                         </div>
@@ -39,7 +40,7 @@
 
 
     <!-- MODAL SUPPRESSION -->
-    <div class="modal fade" id="modalSuppression" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="modalSuppression" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">

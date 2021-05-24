@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap');
+
+::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 16px;
+    background: #e0e0e0;
+}
+
+/* - - - - - - - - - - - CATEGORIES GRID - - - - - - - - - - -  */
+.grille {
+    max-width: 1300px;
+    width: 80%;
+    height: auto;
+    margin: 30px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 300px);
+    justify-content: center;
+    grid-gap: 10px;
+}
+
+.case {
+    width: 300px;
+    height: 200px;
+    background: #292831;
+}
+
+
+
+/* - - - - - - - - - - - ACCUEIL BLOC MENU - - - - - - - - - - -  */
+
+
+.titre_forward {
+    font-size: 8vw;
+    color: black;
+    text-shadow: 5px 3px 4px #0B0A0A;
+    position: absolute;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    top: 330px;
+    left: 230px;
+}
+
+.titre_always {
+    font-size: 8vw;
+    color: #256dfd;
+    font-weight: 500;
+    font-family: 'Lato', sans-serif;
+    position: absolute;
+    top: 200px;
+    left: 230px;
+}
+
+.titre_h1 {
+    font-size: 10vw;
+    position: absolute;
+    top: 280px;
+    left: 200px;
+    color: #f3f1f1;
+    font-family: 'Lato', sans-serif;
+    font-weight: 100;
+}
+
+.imageAccueil img {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    z-index: 1000;
+}
+
+.test {
+    width: 80px;
+    height: 40px;
+    background: royalblue;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    border-radius: 3px;
+}
+
+
+.test a {
+    font-size: 11px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+}
+
+
+.slogan {
+    position: absolute;
+    top: 220px;
+    right: 100px;
+}
+
+.slogan p {
+    color: black;
+    font-size: 14px;
+    font-style: italic;
+    line-height: 3px;
+}
+
+.slogan p:nth-child(2) {
+    font-weight: 900;
+}
+
+.contact {
+    width: 140px;
+    height: 40px;
+    background: black;
+    position: absolute;
+}
+
+.contact p {
+    font-size: 11px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

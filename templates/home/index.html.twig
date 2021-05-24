@@ -3,30 +3,22 @@
 {% block title %}Accueil{% endblock %}
 
 {% block body %}
-    <div class="container">
-        <h1 class="text-center mt-3">Vente de véhicules</h1>
-
-        <div class="row">
-
-            {# CARDS CARS #}
-            {% for car in cars %}
-
-                <div class="col-4">
-                    <div class="card my-4" style="width: 14rem;">
-                        <img src="{{ car.image }}" class="card-img-top">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ car.marque }} {{ car.modele }}</h5>
-                            <div class="card-text">
-                                <p>{{ car.km }}</p>
-                                <p>{{ car.annee }}</p>
-                                <a href="{{ path('car_show', {'id' : car.id }) }}" class="btn btn-primary">Détails</a>
-                                <a href="#" class="btn btn-primary">Ajouter</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            {% endfor %}
-        </div>
+    <div class="section-titres">
+        <h1 class="titre_h1">BTC-CARS</h1>
+        <h2 class="titre_always">Always</h2>
+        <h2 class="titre_forward">Forward</h2>
+    </div>
+    <div class="imageAccueil">
+        <img src="{{ asset('images/agera.jpg') }}" alt="supercar" class="img-fluid">
+    </div>
+    <div class="test">
+        <a class="text-white text-center">TEST DRIVE</a>
+    </div>
+    <div class="slogan">
+        <p>An iconic sportive born to be driven</p>
+        <p>The new AGERA R</p>
+    </div>
+    <div class="contact">
+       <p class="text-white text-center">NOUS CONTACTER"</p>
     </div>
 {% endblock %}

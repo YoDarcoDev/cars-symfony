@@ -4,13 +4,17 @@
 
 {% block body %}
 
-    <div class="container">
         <h2>Nos catégories</h2>
         <p>Trouvez votre véhicule en fonction de sa catégorie</p>
 
-        {% for categorie in categories %}
-            <h3>{{ categorie.type }}</h3>
-        {% endfor %}
-    </div>
+        <div class="grille">
+            {% for categorie in categories %}
+                <div class="case">
+                    <h3><a href="{{ path('categorie_show', {'categorieId' : categorie.id }) }}">{{ categorie.type }}</a></h3>
+                </div>
+            {% endfor %}
+        </div>
+
+
 
 {% endblock %}

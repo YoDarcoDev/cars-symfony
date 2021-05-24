@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+
+{% endblock %}
+
+
+{% block body %}
+<div class="container">
+    <div class="row">
+
+        {% for car in cars %}
+            <div class="col-4">
+                <div class="card my-4" style="width: 14rem;">
+                    <img src="{{ car.image }}" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ car.marque }} {{ car.modele }}</h5>
+                        <div class="card-text">
+                            <p>{{ car.km }} km </p>
+                            <p>Année : {{ car.annee }}</p>
+                            <p>Prix : {{ car.price }}€</p>
+                            <a href="{{ path('car_show', {'id' : car.id }) }}" class="btn btn-primary">Détails</a>
+                            <a href="#" class="btn btn-primary">Ajouter</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+
+    </div>
+</div>
+{% endblock %}
+
+
+
+{#  -id: 235
+-marque: "Detroit Electric"
+-modele: "SP:01"
+-annee: 1983
+-km: 108472
+-carburant: "diesel"
+-couleur: "Plum"
+-portes: 4
+-puissance: 474
+-description: "Totam dolorum recusandae doloremque modi nihil est quasi."
+-image: "https://picsum.photos/id/416/400/400"
+-lieu: "Vasseur"
+-price: 65789
+-categorie: Proxies\__CG__\App\Entity\Categorie {#635 ▶ …2}
+#}
+
+
+

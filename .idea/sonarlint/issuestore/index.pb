@@ -33,3 +33,13 @@ H
 src/Entity/Categorie.php,2/a/2abee1e33e04f2b852dbc64abffad670df092eac
 B
 src/Entity/Car.php,f/b/fbd66758523b99ab921ddf09e7018e97b8bb357e
+V
+&src/Controller/CategorieController.php,0/a/0af51533b25ca3a83cf661a8565b14a221b5e015
+H
+templates/base.html.twig,f/f/ffb3f1cfd73fdec1f0c80c63d0b5bbc1fff22022
+S
+#templates/categorie/index.html.twig,a/5/a5f204b9ada821eb832b6f37ae40bf0d493f413e
+M
+templates/car/index.html.twig,2/0/20d29d829c07dd3f6311dec1d02caae1beecb0c7
+R
+"templates/categorie/show.html.twig,9/3/930d9d6e45d56128ab476e27466b5da67db5b6f3

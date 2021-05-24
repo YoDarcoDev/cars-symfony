@@ -84,25 +84,26 @@ body {
 }
 
 
-.test h3 {
+.test a {
     font-size: 11px;
     position: relative;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    display: block;
 }
 
 
 .slogan {
     position: absolute;
-    top: 200px;
+    top: 220px;
     right: 100px;
 }
 
 .slogan p {
+    color: black;
     font-size: 14px;
     font-style: italic;
-    color: #d9d5d5;
     line-height: 3px;
 }
 
@@ -115,7 +116,6 @@ body {
     height: 40px;
     background: black;
     position: absolute;
-
 }
 
 .contact p {

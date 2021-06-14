@@ -16,7 +16,7 @@
                     <div id="card" class="card my-4" style="width: 14rem;">
                         <div class="image">
                             <img src="{{ car.image }}" class="card-img-top" alt="carte">
-                            <a id="croix" data-car-id="{{ car.id }}" data-toggle="modal" data-target="#modalSuppression" href="{{ path('cars_delete', {'carId' : car.id}) }}">
+                            <a id="deleteCar-{{ car.id }}" class="croix" data-toggle="modal" data-target="#modalSuppression" href="{{ path('cars_delete', {'carId' : car.id}) }}">
                                 <i class="far fa-times-circle"></i>
                             </a>
                         </div>
@@ -54,7 +54,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-                    <button id="btnModalOk" type="button" class="btn btn-danger">Valider</button>
+                    <button id="btnModalOk" type="button" class="btn btn-danger" >Supprimer</button>
                 </div>
             </div>
         </div>
@@ -63,5 +63,4 @@
 {% endblock %}
 
 {% block javascripts %}
-    <script src="assets/js/suppression.js" defer></script>
 {% endblock %}

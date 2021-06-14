@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Repository\CarRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -14,7 +15,7 @@ class CarController extends AbstractController
      * Récupère un véhicule en fonction de son id
      * @Route("/cars/{id}", name="car_show")
      */
-    public function show($id, CarRepository $carRepository): Response
+    public function car($id, CarRepository $carRepository): Response
     {
         $car = $carRepository->find($id);
 
@@ -29,7 +30,7 @@ class CarController extends AbstractController
      * Permet d'afficher tous les véhicules
      * @Route("/cars", name="cars_showAll")
      */
-    public function index(CarRepository $carRepository): Response
+    public function cars(CarRepository $carRepository): Response
     {
         $cars = $carRepository->findAll();
 
@@ -45,11 +46,32 @@ class CarController extends AbstractController
      * @param int $carId
      * @param CarRepository $carRepository
      */
-    public function deleteCar(int $carId, CarRepository $carRepository, EntityManagerInterface $em)
+    public function deleteCar(int $carId, CarRepository $carRepository, EntityManagerInterface $em): JsonResponse
     {
         $car = $carRepository->find("$carId");
 
-        return $this->redirectToRoute('cars_showAll');
+        if (!empty($car)) {
+
+            $em->remove($car);
+            $em->flush();
+
+            $this->addFlash("success", "Le véhicule a bien été supprimé");
+
+            return new JsonResponse([
+                "success" => true,
+                'carId' => $carId,
+                "message" => "Le véhicule a bien été supprimé"
+            ]);
+
+        }
+
+        $this->addFlash("danger", "Le véhicule n'a pas été supprimé");
+
+        return new JsonResponse([
+            "success" => false,
+            'carId' => $carId,
+            "message" => "Le véhicule n'a pas été supprimé"
+        ]);
     }
 
 }

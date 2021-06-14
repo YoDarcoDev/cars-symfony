@@ -1,8 +1,8 @@
-export const modalShow = (id) => {
-    cash(`#${id}`).modal('show');
+const hideModal = (id) => {
+    $(`#${id}`).modal('hide');
 }
 
 
-export const modalHide = (id) => {
-    cash(`#${id}`).modal('hide');
+const showModal = (id) => {
+    $(`#${id}`).modal('show')
 }

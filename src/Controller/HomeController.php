@@ -16,8 +16,6 @@ class HomeController extends AbstractController
      */
     public function index(CarRepository $carRepository, EntityManagerInterface $em): Response
     {
-
-
         $cars = $carRepository->findBy([],[],9);
 
         return $this->render('home/index.html.twig',

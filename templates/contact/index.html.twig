@@ -6,12 +6,13 @@
     <div class="container">
         <h2 class="text-center my-5">Formulaire de Contact</h2>
 
+        {{ form_start(formView) }}
         <div class="form-group">
             <div class="input-group input-group">
                 <div class="input-group-prepend">
                     <span class="input-group-text"><i class="fa fa-user"></i></span>
                 </div>
-                {{ form_widget(formView.firstName) }}
+                {{ form_widget(formView.firstName, {'attr': {'name': 'firstName'}}) }}
             </div>
         </div>
 
@@ -20,7 +21,7 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text"><i class="fa fa-user"></i></span>
                 </div>
-                {{ form_widget(formView.lastName) }}
+                {{ form_widget(formView.lastName,  {'attr': {'name': 'lastName'}}) }}
             </div>
         </div>
 
@@ -29,7 +30,7 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text"><i class="fa fa-envelope"></i></span>
                 </div>
-                {{ form_widget(formView.email) }}
+                {{ form_widget(formView.email, {'attr': {'name': 'email'}}) }}
             </div>
         </div>
 
@@ -38,7 +39,7 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text"><i class="fa fa-phone"></i></span>
                 </div>
-                {{ form_widget(formView.phone) }}
+                {{ form_widget(formView.phone, {'attr': {'name': 'phone'}}) }}
             </div>
         </div>
 
@@ -47,11 +48,13 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text"><i class="far fa-comment-dots"></i></span>
                 </div>
-                {{ form_widget(formView.message) }}
+                {{ form_widget(formView.message, {'attr': {'name': 'message'}}) }}
             </div>
         </div>
 
-        <button type="submit" class="btn btn-primary mt-5">Envoyez votre demande</button>
 
+        <a class="btn btn-primary mt-5" href={{  path('contactForm_validation') }}>Envoyez votre demande</a>
+
+        {{ form_end(formView) }}
     </div>
 {% endblock %}
